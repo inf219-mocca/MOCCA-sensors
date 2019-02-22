@@ -38,14 +38,16 @@ void loop() {
   double calcWatt = 0.0568 * Irms * 230.0;
   //TODO: Granulate
   if (calcWatt > 4) {
-    Serial.println(calcWatt);
+    Serial.print(calcWatt);
   } else {
-    Serial.println(0);
+    Serial.print(0);
   }
 
-  // Heat sensor
-  Serial.print("Ambient = "); Serial.print(mlx.readAmbientTempC()); 
-  Serial.print("*C\tObject = "); Serial.print(mlx.readObjectTempC()); Serial.println("*C");
+  // Heat sensor, split by a tab char so we can read it in Python
+  Serial.print("\t");
+  Serial.print(mlx.readObjectTempC()); 
+  // End with a carriage return and newline, for proper newlines
+  Serial.print("\r\n");
   
   delay(500);
 }
