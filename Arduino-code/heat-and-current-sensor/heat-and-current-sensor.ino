@@ -48,7 +48,7 @@ void loop() {
   double temp = mlx.readObjectTempC();
 
   // Ignore noise from the reading
-  if (calcWatt > 10) {
+  if (calcWatt < 10) {
     calcWatt = 0;
   }
 
@@ -77,6 +77,4 @@ void loop() {
       Serial.print("\r\n");
     }
   }
-
-  //  delay(500);
 }
