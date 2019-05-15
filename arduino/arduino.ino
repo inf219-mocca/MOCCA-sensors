@@ -1,20 +1,19 @@
-/***************************************************
-  This is a library example for the MLX90614 Temp Sensor
+/*
+Copyright (C) 2019  Eivind Dagsland Halderaker, Sondre Nilsen
 
-  Designed specifically to work with the MLX90614 sensors in the
-  adafruit shop
-  ----> https://www.adafruit.com/products/1747 3V version
-  ----> https://www.adafruit.com/products/1748 5V version
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-  These sensors use I2C to communicate, 2 pins are required to
-  interface
-  Adafruit invests time and resources providing this open source code,
-  please support Adafruit and open-source hardware by purchasing
-  products from Adafruit!
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
 
-  Written by Limor Fried/Ladyada for Adafruit Industries.
-  BSD license, all text above must be included in any redistribution
- ****************************************************/
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
 
 #include <Wire.h>
 #include <Adafruit_MLX90614.h>

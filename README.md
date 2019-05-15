@@ -1,15 +1,24 @@
 # MOCCA-sensors
 
-## Getting readings from the Arduino
+## What
+This repository contains the source code of what the Arduino is running: reading
+temperature and power from the coffee machine and serving it over the wire to
+whomever listens.
 
-### Setup getReadings.py
-Make sure you have `pipenv` installed and the run `pipenv sync --dev`. 
-Edit [getReadings.py](Readings/getReadings.py) with correct arduino_port and file path for the sensor data: 
-```python
-arduino_port = "/dev/<port>"
-txt_file_path = "<filepath>.txt"
-``` 
-Now you are ready to start reading! Run [getReadings.py](Readings/getReadings.py) by running `pipenv run python getReadings.py`. The file should now be filled up with sensor data.
+## Dependencies
+This project has a few dependencies that you are required to install to be able
+to compile your code, these can all be downloaded through the built-in library
+downloader in the Arduino IDE.
 
-## Readings
-[readings.txt](Readings/readings.txt) contains sensor data from a Moccamaster brewing and warming the pot.
+- [`cQueu`](https://github.com/SMFSW/cQueue)
+- [`EmonLib`](https://github.com/openenergymonitor/EmonLib)
+- [`Adafruit-MLX90614`](https://github.com/adafruit/Adafruit-MLX90614-Library)
+
+## Usage
+This code has only been tested on an Arduino Uno, so no guarantees for any other
+kind of board. To use it simply open the `arduino.ino` file in the Arduino IDE,
+configure it to read/write to the correct USB port and compile and push it.
+
+If you want to read data you need to open the TTY display and send a `1` which
+the Arduino will receive and return the latest reading from its sensors.
+Anything else is simply ignored.
